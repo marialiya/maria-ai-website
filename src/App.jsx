@@ -55,13 +55,98 @@ const SKILLS = [
 ];
 
 const EXPERIENCES = [
-  { year: '2023 - 至今', role: '高级 UI/UX 设计师', company: '某科技创新公司', desc: '主导核心 SaaS 产品的体验升级，构建并维护企业级设计系统，使研发效率提升 30%。' },
-  { year: '2021 - 2023', role: '视觉与交互设计师', company: '某知名设计机构', desc: '参与多款亿级日活 App 的改版设计，负责从概念探索到高保真原型的全流程输出。' },
-  { year: '2019 - 2021', role: '初级 UI 设计师', company: '某互联网创业团队', desc: '负责移动端应用界面的日常迭代，配合产品经理完成需求的原型可视化。' },
+  {
+    year: '2024.7 - 2025.7',
+    role: '乡村振兴志愿者',
+    company: '江苏省大学生志愿服务乡村振兴计划',
+    summary: '用互联网思维带领 6 人团队从 0 到 1 搭建乡村振兴直播电商体系。',
+    highlights: [
+      '理想主义的实践，用互联网助力乡村振兴；常态化直播实现双平台总销售额近 3 万元、成交 5223 单、触达超 12.1 万人次，验证直播助农可行性并拓宽农产品线上销路，受高淳电视台采访 2 次。',
+      '重构小程序产品流程，打通农产品展示、销售、售后的数字化链路，提升小程序实用性与运营效率，实现农产品线上流通的数字化升级。',
+    ],
+  },
+  {
+    year: '2024.3 - 2024.6',
+    role: '用户体验部体验设计师',
+    company: '传音控股',
+    summary: '负责工具 App 的界面与交互体验，以及系统桌面部分的视觉与交互逻辑梳理。',
+    highlights: [
+      '系统桌面：负责 V15.0 桌面重构中的小部件与文件夹设计，基于 Google 框架和旧版本探索最佳方案，产出 3 版交互模式，参与 4 次交互视觉评审并确定品牌适配方案。',
+      '工具 App：全面重构换机 App，引入 3D 设计，优化用户体验和界面视觉效果。',
+    ],
+  },
+  {
+    year: '2023.11 - 2024.2',
+    role: 'TPG用户体验部体验设计师',
+    company: '百度（中国）有限公司',
+    summary: '负责文心一格功能优化与百度翻译 App 版本优化，覆盖调研、竞品分析、走查、研究与视觉设计。',
+    highlights: [
+      '文心一格：负责 Web 端交互与界面设计，独立承担 P1/P2 需求，交付 10+ 设计需求、累计产出 30+ 设计稿；从 0 到 1 设计并落地浮层帮助与关键细节优化，降低学习成本并提升创作效率。',
+      '百度翻译：参与 v11.1 与 v11.1.1 版本优化，重点提升智能翻译体验与商业化表现，参与约 2/3 页面设计；主导 3 轮上线走查并独立对接开发与产品，保障按时交付。上线后下载量 +7.77%、日新增 +7.04%，并推动下半年营收持续增长。',
+    ],
+  },
+  {
+    year: '2023.8 - 2023.11',
+    role: 'Text数字化部门UX设计师',
+    company: '恩士迅信息科技（中国）有限公司',
+    summary: '深度参与关键数字化项目，从研究到设计到沟通支撑全流程协同。',
+    highlights: [
+      '用户研究：参与 4 个关键项目，开展定向市场调研与竞品分析，研究竞争对手、客户与市场定位，为产品策略提供决策支持。',
+      '产品设计：基于产品定位、市场需求和功能要求，主导整体 UI/交互设计，确保方案与需求方高度契合。',
+      '沟通支持：准备并制作 6 份专业报告和演示文档，系统梳理项目分析结果与解决方案，支撑客户及团队沟通。',
+    ],
+  },
+  {
+    year: '2023.2 - 2023.7',
+    role: 'UED用户体验部视觉设计师',
+    company: '携程',
+    summary: '负责营销活动与活动页面设计优化，参与内部实习生项目及 Hackathon。',
+    highlights: [
+      '产品设计：协助东南亚站点活动页面玩法优化，新增主推目的地板块，活动页面访问时长提升 18%；从 0 到 1 构思并落地「计划旅行」商业玩法，同时优化订单页面，客诉下降 6%。',
+      '运营设计：负责 B/C 类需求主 KV 及延展、活动页 Web/H5 排版，并参与 A 类需求；累计参与 30+ 活动，产出 200+ Banner。',
+      '业务支持：设计 Company intro deck 4.0、App Store 宣传册等多类型 PPT 模板，提升内外部会议沟通效率。',
+      'AIGC 设计：参与 AIGC 虚拟小组，使用 Midjourney 赋能营销设计，出图效率提升约 1 倍。',
+    ],
+  },
+  {
+    year: '2022.6 - 2022.9',
+    role: '品牌塑造部视觉设计师',
+    company: '景枫中心',
+    summary: '参与品牌视觉相关项目，支持品牌设计资产的建设与落地。',
+    highlights: [],
+  },
+];
+
+const ENTREPRENEURIAL_EXPERIENCES = [
+  {
+    year: '2024.7 - 至今',
+    role: '创始人 / 主理人',
+    company: '南京蚂蚁呀嘿文化创意工作室',
+    summary: '提供平面设计、UI 视觉设计与运营服务，服务客户包括南京市高淳团区委、北京邮电大学等。',
+    highlights: [
+      '独立完成「楼下狮豹特」小程序 UI/UX 全流程设计与落地。',
+      '负责南京榈烁文化品牌全链路设计，完成品牌手册与视觉体系搭建。',
+      '操盘「慢城姑娘」小红书 / 公众号 / 抖音全域内容运营，搭建品牌市场逻辑、运营策略与标准化 SOP 流程，输出市场方向与流程文档。',
+    ],
+  },
 ];
 
 const PROJECTS = [
-  { id: 1, title: 'Nova 智能数据中台', category: 'UI/UX 设计', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop', desc: '为企业级用户设计的智能数据分析平台，注重复杂数据的可视化展示与操作效率。' },
+  {
+    id: 1,
+    title: '百度翻译AI功能',
+    category: 'UI/UX 设计',
+    image: '/projects/baidu-ai-2.png',
+    desc: 'AI驱动的下一代智能翻译与语言学习平台。',
+    launchTime: '2024年1月',
+    background: '全球化加速了跨语言信息需求，用户对翻译产品的期待已从单一工具向“理解+学习”的综合体验转变。传统产品普遍存在语境理解不足、使用场景局限、学习闭环缺失等痛点，同时对话式自然语言AI的兴起进一步重塑了用户对即时、互动式语言体验的认知。借助AI大模型，设计目标聚焦于打造智能化、沉浸式、持续驱动学习的语言体验。',
+    detailImages: [
+      '/projects/baidu-ai-1.png',
+      '/projects/baidu-ai-2.png',
+      '/projects/baidu-ai-3.png',
+      '/projects/baidu-ai-4.png',
+    ],
+  },
   { id: 2, title: 'Zenith 冥想 App', category: '移动端应用', image: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=2000&auto=format&fit=crop', desc: '一款主打极简主义的冥想与睡眠辅助应用，采用拟物化与毛玻璃结合的设计语言。' },
   { id: 3, title: 'Aura 电商官网', category: '网页设计', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', desc: '高端独立设计师品牌电商网站重构，强化品牌视觉调性并优化了购物结算转化率。' },
   { id: 4, title: 'Fintech 钱包概念设计', category: '移动端应用', image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2000&auto=format&fit=crop', desc: '探索未来数字加密钱包的交互形式，引入手势操作与动态 3D 资产展示。' },
@@ -74,29 +159,34 @@ const CATEGORIES = ['全部', 'UI/UX 设计', '移动端应用', '网页设计']
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('全部');
   const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedExperience, setSelectedExperience] = useState(null);
 
   const filteredProjects = activeCategory === '全部'
     ? PROJECTS
     : PROJECTS.filter((p) => p.category === activeCategory);
 
-  // 锁定背景滚动（当弹窗打开时）
+  // 锁定背景滚动（当任一弹窗打开时）
   useEffect(() => {
+    const hasModalOpen = Boolean(selectedProject || selectedExperience);
     const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = selectedProject ? 'hidden' : 'unset';
+    document.body.style.overflow = hasModalOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = prevOverflow;
     };
-  }, [selectedProject]);
+  }, [selectedProject, selectedExperience]);
 
   useEffect(() => {
-    if (!selectedProject) return undefined;
+    if (!selectedProject && !selectedExperience) return undefined;
 
     const onKeyDown = (e) => {
-      if (e.key === 'Escape') setSelectedProject(null);
+      if (e.key === 'Escape') {
+        setSelectedProject(null);
+        setSelectedExperience(null);
+      }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [selectedProject]);
+  }, [selectedProject, selectedExperience]);
 
   return (
     <div className="min-h-screen bg-black text-gray-200 font-sans selection:bg-[#A855F7]/30 selection:text-white relative">
@@ -205,25 +295,63 @@ export default function App() {
         </section>
 
         {/* --- Experience Section --- */}
-        <section className="py-24 border-t border-white/5">
+        <section className="py-16 border-t border-white/5">
           <Reveal>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-16 flex items-center gap-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 flex items-center gap-4">
               <span className="w-8 h-1 bg-[#A855F7] rounded-full" />
               工作经历
             </h2>
           </Reveal>
 
-          <div className="relative border-l border-white/10 ml-4 md:ml-6 space-y-12">
+          <div className="space-y-4">
             {EXPERIENCES.map((exp, idx) => (
-              <Reveal key={idx} delay={idx * 100} className="relative pl-8 md:pl-12">
-                {/* Timeline Dot */}
-                <span className="absolute left-[-5px] top-2 w-2.5 h-2.5 rounded-full bg-[#A855F7] ring-4 ring-black" />
-                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-3">
-                  <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                  <span className="text-[#A855F7] font-medium">{exp.company}</span>
-                  <span className="text-sm text-gray-500 bg-white/5 px-3 py-1 rounded-full">{exp.year}</span>
-                </div>
-                <p className="text-gray-400 leading-relaxed max-w-2xl">{exp.desc}</p>
+              <Reveal key={idx} delay={idx * 80}>
+                <button
+                  type="button"
+                  onClick={() => setSelectedExperience({ ...exp, section: '工作经历' })}
+                  className="w-full glass-panel rounded-2xl px-5 py-4 text-left hover:bg-white/5 transition-colors"
+                >
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                    <div className="min-w-0">
+                      <h3 className="text-lg font-bold text-white">{exp.role}</h3>
+                      <p className="text-[#A855F7] font-medium truncate">{exp.company}</p>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-gray-400">
+                      <span className="bg-white/5 px-3 py-1 rounded-full">{exp.year}</span>
+                      <span className="text-[#A855F7]">查看详情</span>
+                    </div>
+                  </div>
+                </button>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal className="mt-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 flex items-center gap-4">
+              <span className="w-8 h-1 bg-[#A855F7] rounded-full" />
+              创业经历
+            </h2>
+          </Reveal>
+
+          <div className="space-y-4">
+            {ENTREPRENEURIAL_EXPERIENCES.map((exp, idx) => (
+              <Reveal key={idx} delay={idx * 80}>
+                <button
+                  type="button"
+                  onClick={() => setSelectedExperience({ ...exp, section: '创业经历' })}
+                  className="w-full glass-panel rounded-2xl px-5 py-4 text-left hover:bg-white/5 transition-colors"
+                >
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                    <div className="min-w-0">
+                      <h3 className="text-lg font-bold text-white">{exp.role}</h3>
+                      <p className="text-[#A855F7] font-medium truncate">{exp.company}</p>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-gray-400">
+                      <span className="bg-white/5 px-3 py-1 rounded-full">{exp.year}</span>
+                      <span className="text-[#A855F7]">查看详情</span>
+                    </div>
+                  </div>
+                </button>
               </Reveal>
             ))}
           </div>
@@ -361,6 +489,9 @@ export default function App() {
                 <p className="text-xl text-gray-400 mb-10 leading-relaxed">
                   {selectedProject.desc}
                 </p>
+                {selectedProject.launchTime && (
+                  <p className="text-sm text-[#A855F7] mb-8">上线时间：{selectedProject.launchTime}</p>
+                )}
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 py-8 border-y border-white/10">
                   <div>
@@ -384,18 +515,65 @@ export default function App() {
                 </div>
 
                 <div className="space-y-6 text-gray-300 leading-relaxed">
-                  <h3 className="text-2xl font-bold text-white">项目背景与挑战</h3>
-                  <p>（此处为占位符：你可以在这里详细描述项目的背景、面临的核心业务挑战以及为什么需要进行设计改版。详细阐述用户痛点和业务目标。）</p>
+                  <h3 className="text-2xl font-bold text-white">项目背景</h3>
+                  <p>{selectedProject.background || '（此处为占位符：你可以在这里详细描述项目背景与目标。）'}</p>
 
-                  <h3 className="text-2xl font-bold text-white mt-12">设计策略与解决方案</h3>
-                  <p>（此处为占位符：描述你是如何通过调研、线框图推导、交互尝试来解决上述问题的。展示你的思考过程而不仅仅是视觉结果。）</p>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                    <div className="aspect-video glass-panel rounded-xl flex items-center justify-center text-gray-600">界面展示 1</div>
-                    <div className="aspect-video glass-panel rounded-xl flex items-center justify-center text-gray-600">界面展示 2</div>
-                  </div>
+                  {selectedProject.detailImages?.length > 0 && (
+                    <div className="mt-8 space-y-8">
+                      {selectedProject.detailImages.map((img, idx) => (
+                        <section key={img} className="space-y-3">
+                          <p className="text-sm text-gray-500">第 {idx + 1} 屏</p>
+                          <img
+                            src={img}
+                            alt={`${selectedProject.title} 细节图 ${idx + 1}`}
+                            className="w-full min-h-[70vh] object-contain rounded-xl border border-white/10 bg-black/30"
+                          />
+                        </section>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedExperience && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-xl transition-opacity"
+            onClick={() => setSelectedExperience(null)}
+          />
+          <div className="relative w-full max-w-3xl max-h-full glass-panel bg-[#0a0512]/90 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+            <div className="flex items-center justify-between p-6 border-b border-white/10">
+              <span className="px-4 py-1.5 rounded-full bg-[#A855F7]/20 text-[#A855F7] text-sm font-medium">
+                {selectedExperience.section}
+              </span>
+              <button
+                onClick={() => setSelectedExperience(null)}
+                className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <div className="overflow-y-auto p-6 md:p-8">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-white mb-2">{selectedExperience.role}</h3>
+                <p className="text-[#A855F7] font-medium">{selectedExperience.company}</p>
+                <p className="text-sm text-gray-400 mt-2">{selectedExperience.year}</p>
+              </div>
+
+              {selectedExperience.highlights?.length > 0 ? (
+                <ul className="space-y-3 text-gray-300 leading-relaxed list-disc pl-5">
+                  {selectedExperience.highlights.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-400">暂无详细描述。</p>
+              )}
             </div>
           </div>
         </div>
