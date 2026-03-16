@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全局视角下的产品体验规划 - Tech Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --bg-deep: #030712;
+      --bg-card: rgba(17, 24, 39, 0.6);
+      --neon-cyan: #00f3ff;
+      --neon-blue: #0066ff;
+      --neon-purple: #8a2be2;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --glass-border: rgba(0, 243, 255, 0.15);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #000;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(0, 102, 255, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(138, 43, 226, 0.15), transparent 25%);
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+      min-height: 100vh;
+      padding: 16px 0;
+      place-items: center;
+      font-family: 'Noto Sans SC', sans-serif;
+      overflow-x: hidden;
+    }
+    .slide-container {
+      background-color: var(--bg-deep);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(0, 243, 255, 0.05), 0 20px 40px rgba(0,0,0,0.8);
+      display: flex;
+      flex-direction: column;
+      width: min(1280px, calc(100vw - 32px));
+      aspect-ratio: 16 / 9;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+      padding: clamp(42px, 5vw, 80px) clamp(24px, 4vw, 60px) clamp(24px, 3.5vw, 50px);
+    }
+    .slide-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--glass-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--glass-border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.3;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .slide-container > * { position: relative; z-index: 1; }
+    .slide-header {
+      position: absolute;
+      top: 0; left: 0; width: 100%;
+      padding: 25px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      background: linear-gradient(180deg, rgba(3,7,18,0.9) 0%, rgba(3,7,18,0) 100%);
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: var(--text-main); letter-spacing: 1px; }
+    .logo-icon { color: var(--neon-cyan); font-size: 24px; filter: drop-shadow(0 0 8px var(--neon-cyan)); }
+    .logo-area span { color: var(--neon-blue); }
+    .slide-decorator { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--neon-cyan); opacity: 0.6; letter-spacing: 2px; }
+    h1, h2, h3 { color: var(--text-main); font-weight: 700; }
+    p, li, td { color: var(--text-sub); line-height: 1.7; font-size: 18px; }
+    .accent-text {
+      background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    }
+    .title-layout { text-align: center; margin: auto; position: relative; }
+    .title-layout h1 { font-size: 72px; letter-spacing: 4px; margin-bottom: 24px; }
+    .title-layout .subtitle { font-size: 26px; color: var(--text-sub); font-weight: 300; letter-spacing: 2px; }
+    .cyber-line {
+      height: 1px;
+      width: 200px;
+      background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+      margin: 40px auto;
+      position: relative;
+    }
+    .cyber-line::after {
+      content: '';
+      position: absolute;
+      top: -2px; left: 50%; transform: translateX(-50%);
+      width: 10px; height: 5px;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan);
+    }
+    .section-title-layout { text-align: center; margin: auto; }
+    .section-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 80px;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.1);
+      margin-bottom: -30px;
+      display: block;
+    }
+    .section-title-layout h2 { font-size: 56px; margin-bottom: 20px; }
+    .section-title-layout p { font-size: 22px; max-width: 800px; margin: 0 auto; }
+    .slide-title {
+      font-size: 40px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .slide-title::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 36px;
+      background: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan);
+      border-radius: 3px;
+    }
+    .content-area { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+    .timeline-container { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 40px; position: relative; }
+    .timeline-track { position: absolute; top: 50px; left: 5%; right: 5%; height: 2px; background: rgba(255,255,255,0.1); z-index: 0; }
+    .timeline-node { width: 18%; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .node-icon {
+      width: 60px; height: 60px; background: var(--bg-deep); border: 2px solid var(--glass-border); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--neon-cyan);
+      margin-bottom: 20px; transform: rotate(45deg);
+    }
+    .node-icon i { transform: rotate(-45deg); }
+    .node-content { background: var(--bg-card); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); padding: 20px 15px; border-radius: 8px; width: 100%; }
+    .node-content h3 { font-size: 18px; color: var(--text-main); margin-bottom: 8px; }
+    .node-content p { font-size: 14px; line-height: 1.5; margin: 0; }
+    .split-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; height: 100%; align-items: center; }
+    .tech-list { list-style: none; }
+    .tech-list li { margin-bottom: 20px; padding: 18px 18px 18px 55px; position: relative; border-left: 3px solid rgba(0, 243, 255, 0.3); border-radius: 0 8px 8px 0; background: linear-gradient(90deg, rgba(0, 243, 255, 0.06), transparent); }
+    .tech-list li i { position: absolute; left: 18px; top: 22px; color: var(--neon-cyan); font-size: 18px; }
+    .tech-list li strong { color: var(--text-main); display: block; margin-bottom: 6px; font-size: 19px; }
+    .image-box { width: 100%; height: 450px; border-radius: 16px; overflow: hidden; border: 1px solid var(--glass-border); }
+    .image-box img { width: 100%; height: 100%; object-fit: cover; }
+    .glass-table { width: 100%; border-collapse: separate; border-spacing: 0 10px; }
+    .glass-table th, .glass-table td { padding: 18px 20px; text-align: left; }
+    .glass-table th { font-size: 16px; color: var(--neon-cyan); border-bottom: 1px solid rgba(0, 243, 255, 0.3); font-family: 'JetBrains Mono', monospace; }
+    .glass-table tr td { background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .glass-table tr td:first-child { border-left: 1px solid rgba(255,255,255,0.05); border-radius: 8px 0 0 8px; color: var(--text-main); font-weight: 700; }
+    .glass-table tr td:last-child { border-right: 1px solid rgba(255,255,255,0.05); border-radius: 0 8px 8px 0; }
+    .tech-tag { display: inline-block; background: rgba(0, 243, 255, 0.1); color: #fff; padding: 6px 12px; border-radius: 4px; font-size: 14px; border: 1px solid rgba(0, 243, 255, 0.3); margin: 4px 6px 4px 0; }
+    .quote-box { text-align: center; max-width: 900px; margin: auto; padding: 60px; }
+    .quote-box p { font-size: 34px; color: var(--text-main); font-weight: 300; line-height: 1.6; }
+    .full-bg-slide { padding: 0; }
+    .full-bg-slide .bg-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; z-index: 0; }
+    .full-bg-slide .overlay { position: absolute; inset: 0; background: linear-gradient(90deg, var(--bg-deep) 10%, transparent 90%); z-index: 1; }
+    .full-bg-slide .content-area { position: relative; z-index: 2; padding: 80px 100px; align-items: flex-start; }
+    @media (max-width: 900px) {
+      .title-layout h1 { font-size: 48px; }
+      .title-layout .subtitle { font-size: 18px; }
+      .section-title-layout h2 { font-size: 38px; }
+      .section-title-layout p { font-size: 16px; }
+      .slide-title { font-size: 28px; margin-bottom: 24px; }
+      p, li, td { font-size: 14px; line-height: 1.6; }
+      .split-layout { grid-template-columns: 1fr; gap: 20px; }
+      .image-box { height: 240px; }
+      .timeline-node { width: 19%; }
+      .node-content { padding: 12px 8px; }
+      .node-content h3 { font-size: 13px; }
+      .node-content p { font-size: 11px; line-height: 1.4; }
+      .full-bg-slide .content-area { padding: 40px 24px; }
+      .full-bg-slide h2 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">SYS.INIT // 2024.10</div>
+    </div>
+    <div class="title-layout">
+      <div class="cyber-line"></div>
+      <h1>全局视角下的<br /><span class="accent-text">产品体验规划</span></h1>
+      <p class="subtitle">系统梳理复杂业务场景下的用户路径与设计重点</p>
+      <div class="cyber-line"></div>
+    </div>
+  </div>
+
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">MODULE_01 // MINDSET</div>
+    </div>
+    <div class="section-title-layout">
+      <span class="section-number">01</span>
+      <h2>重塑用户的心智模型</h2>
+      <p>理解心智模型的形成路径，是帮助用户实现使用习惯平滑迁移的关键前提。</p>
+    </div>
+  </div>
+
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">SEC_01.01 // FLOW</div>
+    </div>
+    <h2 class="slide-title">用户心智模型形成流</h2>
+    <div class="content-area">
+      <div class="timeline-container">
+        <div class="timeline-track"></div>
+        <div class="timeline-node">
+          <div class="node-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+          <div class="node-content"><h3>了解智能助理</h3><p>关键场景选择<br />挖掘产品契机</p></div>
+        </div>
+        <div class="timeline-node">
+          <div class="node-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="node-content" style="transform: translateY(20px);"><h3>产生价值感知</h3><p>核心价值提炼<br />精准感知传递</p></div>
+        </div>
+        <div class="timeline-node">
+          <div class="node-icon"><i class="fa-solid fa-gamepad"></i></div>
+          <div class="node-content"><h3>快速上手使用</h3><p>优化交互链路<br />降低首次门槛</p></div>
+        </div>
+        <div class="timeline-node">
+          <div class="node-icon"><i class="fa-solid fa-rotate"></i></div>
+          <div class="node-content" style="transform: translateY(20px);"><h3>形成使用习惯</h3><p>多场景生态覆盖<br />持续强化感知</p></div>
+        </div>
+        <div class="timeline-node">
+          <div class="node-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="node-content"><h3>养成使用依赖</h3><p>算法与数据驱动<br />极致个性化体验</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">SEC_01.02 // MIGRATION</div>
+    </div>
+    <h2 class="slide-title">习惯迁移的核心触发器</h2>
+    <div class="content-area">
+      <div class="split-layout">
+        <ul class="tech-list">
+          <li><i class="fa-solid fa-crosshairs"></i><strong>准确定位高频场景</strong>在最容易产生痛点的环节提供智能化解决方案，创造“第一次心动”。</li>
+          <li><i class="fa-solid fa-unlock-keyhole"></i><strong>极致降低准入门槛</strong>渐进式信息披露与所见即所得的交互，让价值立即可见。</li>
+          <li><i class="fa-solid fa-infinity"></i><strong>构建多端/场景闭环</strong>打破数据孤岛，使用户在不同触点感知统一的产品价值。</li>
+          <li><i class="fa-solid fa-fingerprint"></i><strong>算法赋能个性化</strong>通过长期数据沉淀实现界面的自适应，重塑心智习惯。</li>
+        </ul>
+        <div class="image-box">
+          <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1280&auto=format&fit=crop" alt="Abstract Tech Visualization" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">MODULE_02 // SYSTEM</div>
+    </div>
+    <div class="section-title-layout">
+      <span class="section-number">02</span>
+      <h2>系统化交互检查矩阵</h2>
+      <p>逐层剖析产品结构，严谨校验交互的可用性、易用性与好用度。</p>
+    </div>
+  </div>
+
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">SEC_02.01 // CHECKLIST</div>
+    </div>
+    <h2 class="slide-title">多维可用性校验模型</h2>
+    <div class="content-area">
+      <table class="glass-table">
+        <thead>
+          <tr><th style="width: 20%;">架构层级</th><th style="width: 80%;">校验指标拆解参数</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><i class="fa-solid fa-sitemap" style="margin-right:8px; color:var(--neon-cyan)"></i> 框架层</td><td><span class="tech-tag">层级关系合理性</span><span class="tech-tag">信息区块区分度</span><span class="tech-tag">未来功能扩展性</span></td></tr>
+          <tr><td><i class="fa-solid fa-route" style="margin-right:8px; color:var(--neon-cyan)"></i> 流程层</td><td><span class="tech-tag">画像覆盖率</span><span class="tech-tag">主流程极速通畅</span><span class="tech-tag">入口统筹规划</span><span class="tech-tag">异常容错机制</span></td></tr>
+          <tr><td><i class="fa-solid fa-layer-group" style="margin-right:8px; color:var(--neon-cyan)"></i> 内容层</td><td><span class="tech-tag">符合F型视觉流</span><span class="tech-tag">核心内容高亮</span><span class="tech-tag">空/加载/错误状态</span></td></tr>
+          <tr><td><i class="fa-solid fa-bell" style="margin-right:8px; color:var(--neon-cyan)"></i> 反馈层</td><td><span class="tech-tag">全局/局部通知及时性</span><span class="tech-tag">弱打扰与强警示平衡</span></td></tr>
+          <tr><td><i class="fa-solid fa-language" style="margin-right:8px; color:var(--neon-cyan)"></i> 文本层</td><td><span class="tech-tag">表意准确降噪</span><span class="tech-tag">全局用词一致性</span><span class="tech-tag">品牌语调契合</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="slide-container full-bg-slide">
+    <img class="bg-image" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1280&auto=format&fit=crop" alt="Cyber Security Data" />
+    <div class="overlay"></div>
+    <div class="slide-header" style="background: transparent; border: none;">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">MODULE_03 // INTEGRATION</div>
+    </div>
+    <div class="content-area">
+      <span class="section-number" style="margin-bottom: 10px;">03</span>
+      <h2>UX 角色多元化与全链路</h2>
+      <p style="font-size: 24px; max-width: 600px;">作为系统的架构者与使用者，体验思维必须作为底层代码，贯穿并渗透产品的全生命周期。</p>
+    </div>
+  </div>
+
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">SEC_03.01 // LIFECYCLE</div>
+    </div>
+    <h2 class="slide-title">体验设计全周期赋能矩阵</h2>
+    <div class="content-area">
+      <table class="glass-table">
+        <thead>
+          <tr><th style="width: 25%;">产品阶段</th><th style="width: 55%;">核心干预节点</th><th style="width: 20%;">参与权重</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1. 核心立项</td><td>前期调研 · 可行性数据分析 · 体验侧商业计划</td><td>深度参与</td></tr>
+          <tr><td>2. 架构设计</td><td>核心功能规划 · 宏观产品体验策略制定</td><td>深度参与</td></tr>
+          <tr><td>3. 体验构建</td><td>业务交互逻辑设计 · 用户研究与可用性测试</td><td>核心主导</td></tr>
+          <tr><td>4. 研发部署</td><td>开发协同与走查 · 视觉还原度校验 · 白名单测试</td><td>协同跟进</td></tr>
+          <tr><td>5. 商业化与运营</td><td>增长引擎设计 · 营销推广视觉策略 · 商业场景研究</td><td>深度参与</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="slide-container">
+    <div class="slide-header">
+      <div class="logo-area"><i class="fa-solid fa-cube logo-icon"></i> NEXUS<span>UX</span></div>
+      <div class="slide-decorator">SYS.END // SUMMARY</div>
+    </div>
+    <div class="content-area">
+      <div class="quote-box">
+        <p>卓越的数字产品体验，不仅源于全局视角的<span class="accent-text">宏观架构</span>，更决胜于对用户全链路中每一处<span class="accent-text">交互数据的毫厘打磨</span>。</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

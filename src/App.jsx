@@ -12,6 +12,15 @@ import {
   Dribbble,
   Github,
   ArrowRight,
+  Route,
+  BookOpen,
+  Package,
+  Network,
+  Zap,
+  Database,
+  ShieldCheck,
+  Activity,
+  CheckCircle2,
 } from 'lucide-react';
 
 // --- 自定义滚动动画 Hook 组件 ---
@@ -50,8 +59,103 @@ const Reveal = ({ children, className = '', delay = 0, ...props }) => {
 // --- 核心数据 ---
 const SKILLS = [
   { category: '设计工具', items: ['Figma', 'Sketch', 'Adobe XD', 'Photoshop', 'Illustrator', 'Principle'] },
-  { category: '专业技能', items: ['用户体验设计 (UX)', '用户界面设计 (UI)', '交互原型制作', '设计系统构建', '用户调研', '产品思维'] },
-  { category: '前端开发', items: ['HTML / CSS', 'React.js', 'Tailwind CSS', 'Framer Motion'] },
+  { category: '专业技能', items: ['用户体验设计 (UX)', '用户界面设计 (UI)', '交互原型制作', '用户调研', '产品思维'] },
+  { category: 'AI应用能力', items: ['Vibe coding', 'Midjourney', 'Lovart'] },
+];
+
+const CAPABILITY_PROJECTS = [
+  {
+    title: '设计流程',
+    icon: Route,
+    desc: '从需求洞察到方案验证的端到端设计流程体系。',
+    coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1280&auto=format&fit=crop',
+    detailPage: '/capabilities/design-process-tech.html',
+    details: [
+      '需求梳理与目标拆解：定义业务目标、用户目标和衡量指标。',
+      '研究与洞察：结合访谈、问卷、竞品分析定位关键机会点。',
+      '方案产出与验证：通过信息架构、线框和原型进行快速验证迭代。',
+    ],
+  },
+  {
+    title: '方法沉淀',
+    icon: BookOpen,
+    desc: '把项目经验固化为可复用的方法、模板与规范。',
+    coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1280&auto=format&fit=crop',
+    customType: 'b2bFramework',
+    details: [
+      '沉淀组件与交互规范，统一设计语言并降低沟通成本。',
+      '建立评审与复盘机制，将经验转化为团队可继承资产。',
+      '形成从问题定义到交付验收的标准化流程文档。',
+    ],
+  },
+  {
+    title: '对AI应用的思考',
+    icon: Package,
+    desc: '从场景价值、可解释性到落地成本，系统化评估 AI 应用设计。',
+    coverImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1280&auto=format&fit=crop',
+    sections: [
+      {
+        heading: '观察',
+        content: '最近在观察市面上的各类产品时，我有一个很强烈的感受：大量所谓“AI 产品”本质上仍是传统互联网产品逻辑，只是在某个节点接入了智能能力；而真正的 AI Native 产品，则是围绕模型能力重新设计产品结构与交互方式。',
+      },
+      {
+        heading: '问题提出',
+        content: '当越来越多的软件都在右上角加入一个“AI 助手”按钮时，我们更需要回到产品底层逻辑去判断：它到底是功能增强，还是范式重构。',
+      },
+      {
+        heading: '1）核心判断标准：去掉 AI，产品还能成立吗？',
+        content: 'AI-enabled 产品去掉 AI 后仍可使用，AI 只是附加能力，比如传统修图或文档工具中的智能功能。AI Native 产品去掉 AI 后将失去核心能力，例如 ChatGPT、Midjourney 这类以模型为中心的产品。',
+      },
+      {
+        heading: '2）产品结构层：从“局部增强”到“全局接管”',
+        content: '在 AI-enabled 阶段，原有结构和用户流程基本不变，AI 仅在某一步骤提升效率；而在 AI Native 阶段，用户不再逐步操作软件，而是直接表达目标，由系统规划任务并输出结果，产品核心从“工具流程”转向“结果交付”。',
+      },
+      {
+        heading: '3）交互设计层：从“图形界面”到“意图界面”',
+        content: '传统产品依赖按钮、菜单、表单，用户是操作者；AI Native 更强调对话、意图与 Agent，用户逐渐成为指挥者。以搜索为例：传统搜索返回链接列表，用户自行筛选；AI Native 搜索会在后台组织信息并直接给出结论，体验从“检索工具”进化为“知识代理”。',
+      },
+      {
+        heading: '结语与趋势',
+        content: '当前多数产品仍处在从 AI-enabled 向 AI Native 的过渡期。对设计而言，真正的挑战已经不只是把“AI 按钮”做得更显眼，而是基于模型的推理与执行能力，重构一套更少路径、更高完成度的新工作流。',
+      },
+    ],
+    details: [
+      '先定义“AI 解决什么问题”，再选择模型与交互形态，避免为 AI 而 AI。',
+      '以可解释反馈和可回退机制提升用户信任，降低黑盒感与误操作风险。',
+      '平衡体验收益与实现成本，持续跟踪模型效果并迭代提示词与流程。',
+    ],
+  },
+];
+
+const EXTENDED_CAPABILITIES = [
+  {
+    title: '市场能力',
+    desc: '理解用户与市场，支持品牌定位和增长策略。',
+    detailImages: [
+      '/image/yunying/manchengguniang.png',
+      '/image/yunying/SOP.png',
+      '/image/yunying/yunying.png',
+    ],
+    details: [
+      '分析目标人群与竞品格局，提炼差异化价值主张。',
+      '配合营销节点输出策略导向的设计与传播素材。',
+      '将市场反馈反哺产品体验，提升整体转化效率。',
+    ],
+  },
+  {
+    title: '账号运营',
+    desc: '覆盖内容规划、发布节奏和数据复盘的运营能力。',
+    detailImages: [
+      '/image/zimeiti/zimeiti-overview.png',
+      '/image/zimeiti/zimeiti-script.png',
+      '/image/zimeiti/zimeiti-stats.png',
+    ],
+    details: [
+      '搭建内容选题与栏目体系，形成稳定输出机制。',
+      '依据平台特性优化文案、视觉和互动策略。',
+      '通过数据分析持续调整方向，沉淀可复制 SOP。',
+    ],
+  },
 ];
 
 const EXPERIENCES = [
@@ -135,31 +239,122 @@ const PROJECTS = [
   {
     id: 1,
     title: '百度翻译AI功能',
-    category: 'UI/UX 设计',
-    image: '/projects/baidu-ai-2.png',
+    category: '移动端应用',
+    image: '/image/百度翻译封面.png',
     desc: 'AI驱动的下一代智能翻译与语言学习平台。',
     launchTime: '2024年1月',
     background: '全球化加速了跨语言信息需求，用户对翻译产品的期待已从单一工具向“理解+学习”的综合体验转变。传统产品普遍存在语境理解不足、使用场景局限、学习闭环缺失等痛点，同时对话式自然语言AI的兴起进一步重塑了用户对即时、互动式语言体验的认知。借助AI大模型，设计目标聚焦于打造智能化、沉浸式、持续驱动学习的语言体验。',
     detailImages: [
-      '/projects/baidu-ai-1.png',
-      '/projects/baidu-ai-2.png',
-      '/projects/baidu-ai-3.png',
-      '/projects/baidu-ai-4.png',
+      '/image/百度翻译1.png',
+      '/image/百度翻译2.png',
+      '/image/百度翻译3.png',
+      '/image/百度翻译4.png',
     ],
   },
-  { id: 2, title: 'Zenith 冥想 App', category: '移动端应用', image: 'https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=2000&auto=format&fit=crop', desc: '一款主打极简主义的冥想与睡眠辅助应用，采用拟物化与毛玻璃结合的设计语言。' },
-  { id: 3, title: 'Aura 电商官网', category: '网页设计', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop', desc: '高端独立设计师品牌电商网站重构，强化品牌视觉调性并优化了购物结算转化率。' },
-  { id: 4, title: 'Fintech 钱包概念设计', category: '移动端应用', image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2000&auto=format&fit=crop', desc: '探索未来数字加密钱包的交互形式，引入手势操作与动态 3D 资产展示。' },
-  { id: 5, title: '企业级设计系统', category: 'UI/UX 设计', image: 'https://images.unsplash.com/photo-1507238692062-540955af3cb5?q=80&w=2000&auto=format&fit=crop', desc: '从 0 到 1 搭建基于 Figma 的企业级组件库，包含 50+ 核心组件与完整的使用规范。' },
+  {
+    id: 2,
+    title: '智建云租（创业项目）',
+    category: '网页端应用',
+    image: '/image/AIagent.png',
+    desc: '「智建云租」是一个面向建筑材料租赁业务的 SaaS 化一体化工作台。',
+    projectLink: 'http://121.41.188.162/',
+    background: `项目地址：http://121.41.188.162/
+
+项目背景：
+传统通用 SaaS（金蝶/用友）采用线性强绑定关联逻辑：订单 -> 发货单 -> 签收单 -> 结算单。归还时，必须明确“这次归还的是哪张租出单里的哪批货”。
+
+痛点：
+建筑材料（如钢管、扣件、脚手架）属于无差别的大宗散货物资，一旦进入工地，不同批次发过去的材料会完全混在一起。工期结束或部分退场时，工人只能按“总数”装车归还，根本不可能、也无法分辨哪些是第一批租的、哪些是第三批租的。强绑定会导致系统在使用时卡死，业务员只能为了系统而造假账。
+
+智建云租方案：
+采用“错位流转与对账结算驱动”的行业深度定制逻辑：租出单与归还单解耦，两者不发生直接关联，而是共同作用于该项目的“物资动态总池”。
+
+优势：
+极大降低一线人员操作门槛，完全贴合建筑行业“高频进出、按批收发、乱序归还”的真实施工场景。`,
+    detailImages: [
+      '/image/AIagent.png',
+      '/image/xiangmu_zuchu.png',
+      '/image/xiangmu_zuchu_hetong.png',
+      '/image/xiangmu_zuchu_zonglan.png',
+      '/image/xiangmu_zuchu_zuchudan.png',
+      '/image/xiangmu_zuchu_zuchudan2.png',
+      '/image/jinxiao_caigou.png',
+      '/image/jinxiao_caigoudan.png',
+      '/image/jinxiao_kucun.png',
+      '/image/xinxi_cailiao.png',
+    ],
+  },
+  {
+    id: 3,
+    title: '文心一格体验升级（文生图AI）',
+    category: '网页端应用',
+    image: '/image/wenxin-cover.png',
+    desc: '面向大众创作者的文生图 AI 产品体验优化，提升创作效率、可控性与探索乐趣。',
+    background: '文心一格作为基于文心大模型的 AI 绘画产品，提供了从文本到图像的生成能力，并吸引了大量用户进行 AI 创作尝试。但随着用户规模增长与使用场景的多样化，用户对 AI 工具的期待也从“尝试生成图片”转向“高效完成创作”，产品体验的重要性逐渐提升。',
+    detailImages: [
+      '/image/wenxin-1.png',
+      '/image/wenxin-2.png',
+      '/image/wenxin-3.png',
+      '/image/wenxin-4.png',
+    ],
+  },
+  {
+    id: 4,
+    title: '如流-智能助理（百度企业办公应用）',
+    category: '移动端应用',
+    image: '/image/如流超级助理封面.png',
+    desc: '在企业办公场景中引入AI智能助理能力,优化信息检索、任务协同与日常决策效率。',
+    role: '设计师',
+    period: '--',
+    background: '业务痛点：随着企业内部工具（如 OA、差旅出行、研发 iCafe 提单等）日益庞杂，员工面临着严重的“系统割裂”和“入口迷失”问题。传统的“菜单点击”与“关键词搜索”效率低下，且新员工学习成本极高。设计目标：依托 LLM（大语言模型）能力，将办公体验从“人找系统”升级为“对话即服务（Dialog as a Service）”。通过自然语言交互作为统一入口，打造一个能理解上下文、支持多轮对话、并能直接唤起插件执行任务的 AI 超级助理。',
+    detailImages: [
+      '/image/如流超级助理图1.png',
+      '/image/Slide%2016_9%20-%201.png',
+      '/image/Slide%2016_9%20-%202.png',
+      '/image/Slide%2016_9%20-%203.png',
+      '/image/Slide%2016_9%20-%204.png',
+      '/image/Slide%2016_9%20-%205.png',
+      '/image/Slide%2016_9%20-%206.png',
+      '/image/Slide%2016_9%20-%207.png',
+    ],
+  },
+  {
+    id: 5,
+    title: 'Trip.com计划旅行页升级',
+    category: '移动端应用',
+    image: '/image/trip-plan-cover.png',
+    desc: '围绕旅行决策链路重构计划页体验，提升用户浏览深度、停留时长与转化表现。',
+    detailImages: [
+      '/image/trip%20plan.png',
+      '/image/trip%20plan-1.png',
+      '/image/trip%20plan-2.png',
+      '/image/trip%20plan-3.png',
+    ],
+  },
+  {
+    id: 6,
+    title: 'Trip.com营销视觉',
+    category: '视觉设计',
+    image: '/image/营销活动.png',
+    desc: '打造多场景营销视觉体系与活动素材规范，统一品牌表达并提升活动触达效率。',
+    detailImages: [
+      '/image/营销活动-1.png',
+      '/image/营销活动-2.png',
+      '/image/营销活动-3.png',
+      '/image/营销活动-4.png',
+      '/image/营销活动-5.png',
+    ],
+  },
 ];
 
-const CATEGORIES = ['全部', 'UI/UX 设计', '移动端应用', '网页设计'];
+const CATEGORIES = ['全部', '网页端应用', '移动端应用', '视觉设计'];
 
 // --- 主页面组件 ---
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('全部');
   const [selectedProject, setSelectedProject] = useState(null);
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const [selectedCapability, setSelectedCapability] = useState(null);
 
   const filteredProjects = activeCategory === '全部'
     ? PROJECTS
@@ -167,26 +362,27 @@ export default function App() {
 
   // 锁定背景滚动（当任一弹窗打开时）
   useEffect(() => {
-    const hasModalOpen = Boolean(selectedProject || selectedExperience);
+    const hasModalOpen = Boolean(selectedProject || selectedExperience || selectedCapability);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = hasModalOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = prevOverflow;
     };
-  }, [selectedProject, selectedExperience]);
+  }, [selectedProject, selectedExperience, selectedCapability]);
 
   useEffect(() => {
-    if (!selectedProject && !selectedExperience) return undefined;
+    if (!selectedProject && !selectedExperience && !selectedCapability) return undefined;
 
     const onKeyDown = (e) => {
       if (e.key === 'Escape') {
         setSelectedProject(null);
         setSelectedExperience(null);
+        setSelectedCapability(null);
       }
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [selectedProject, selectedExperience]);
+  }, [selectedProject, selectedExperience, selectedCapability]);
 
   return (
     <div className="min-h-screen bg-black text-gray-200 font-sans selection:bg-[#A855F7]/30 selection:text-white relative">
@@ -252,10 +448,13 @@ export default function App() {
               </p>
               <div className="text-base md:text-lg text-gray-400 leading-relaxed space-y-4">
                 <p>
-                  <strong className="text-gray-200">✨ 丰富的头部大厂及多端项目经验：</strong>曾履职于百度、传音、携程等多家头部互联网企业，业务线主要覆盖 C/B/G 多端。深度参与百度翻译（千万级体量）、文心一格等产品的体验设计与优化，主导的改版助力 APP 下载量提升 7.77%、日新增提升 7.04%。
+                  <strong className="text-gray-200">🏢 大厂与多端实战经验：</strong>拥有百度、携程、传音等头部互联网公司经验，参与并推动多款 C/B/G 端产品的体验设计与增长优化。曾深度参与百度翻译（千万级用户产品）与文心一格等 AI 产品设计，通过体验改版推动 APP 下载量提升 7.77%，日新增提升 7.04%。
                 </p>
                 <p>
-                  <strong className="text-gray-200">🚀 AIGC 商业化落地与从0到1全局视角：</strong>2023 年将 AIGC（MJ、SD）深度融入实际设计工作流，曾在携程通过 AI 赋能使营销作图效率大幅提升，并参与 AI 应用产品的内部创业比赛。曾带队成功搭建乡村振兴直播体系并重构农产品小程序的数字化全链路。
+                  <strong className="text-gray-200">🤖 AIGC 工作流升级：</strong>2023 年开始将 AIGC（如 Midjourney、Stable Diffusion）系统化融入设计工作流，在携程推动 AI 赋能视觉生产效率，并参与 AI 应用产品内部创业项目并获得铜奖。
+                </p>
+                <p>
+                  <strong className="text-gray-200">🚀 从 0 到 1 的全局能力：</strong>具备从 0 到 1 的产品与设计全局能力：曾创业打造 ToB 建材 SaaS 产品「智建云租」，负责产品与设计体系搭建；同时主导乡村振兴直播体系建设，并重构农产品小程序的数字化运营链路。
                 </p>
               </div>
             </div>
@@ -299,7 +498,7 @@ export default function App() {
           <Reveal>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 flex items-center gap-4">
               <span className="w-8 h-1 bg-[#A855F7] rounded-full" />
-              工作经历
+              工作/实习经历
             </h2>
           </Reveal>
 
@@ -386,7 +585,7 @@ export default function App() {
           </Reveal>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {filteredProjects.map((project, idx) => (
               <Reveal
                 key={project.id}
@@ -427,10 +626,73 @@ export default function App() {
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {SKILLS.map((skillGroup, idx) => (
-              <Reveal key={idx} delay={idx * 150}>
-                <div className="glass-panel p-8 rounded-3xl h-full hover:bg-white/5 transition-colors">
+          <Reveal delay={100}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {CAPABILITY_PROJECTS.map((item, idx) => (
+                <Reveal
+                  key={item.title}
+                  delay={idx * 80}
+                  className="group cursor-pointer"
+                  onClick={() => setSelectedCapability({ ...item, section: '相关能力' })}
+                >
+                  <div className="relative overflow-hidden rounded-3xl glass-panel aspect-[4/3] mb-6">
+                    {item.coverImage ? (
+                      <img
+                        src={item.coverImage}
+                        alt={`${item.title} 封面`}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-[#1A0B2E] via-[#0d1326] to-black flex items-center justify-center">
+                        <item.icon size={42} className="text-[#A855F7]" />
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+                      <div className="w-12 h-12 rounded-full bg-[#A855F7] text-white flex items-center justify-center translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ml-auto">
+                        <ArrowRight size={24} />
+                      </div>
+                    </div>
+                    <div className="absolute top-6 left-6 px-4 py-2 glass-panel rounded-full text-xs font-semibold text-white tracking-wider backdrop-blur-xl flex items-center gap-2">
+                      <item.icon size={14} className="text-[#A855F7]" />
+                      相关能力
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#A855F7] transition-colors">{item.title}</h3>
+                  <p className="text-gray-400 line-clamp-2">{item.desc}</p>
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={150} className="mt-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 flex items-center gap-3">
+              <span className="w-6 h-1 bg-[#A855F7] rounded-full" />
+              拓展能力
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {EXTENDED_CAPABILITIES.map((item) => (
+                <button
+                  key={item.title}
+                  type="button"
+                  onClick={() => setSelectedCapability({ ...item, section: '拓展能力' })}
+                  className="glass-panel p-8 rounded-3xl h-full text-left hover:bg-white/5 transition-colors group"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <h3 className="text-xl font-bold text-white group-hover:text-[#A855F7] transition-colors">
+                      {item.title}
+                    </h3>
+                    <ArrowRight size={20} className="text-[#A855F7] shrink-0 translate-x-0 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                  <p className="text-gray-400 mt-3 leading-relaxed">{item.desc}</p>
+                </button>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={200} className="mt-16">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {SKILLS.map((skillGroup, idx) => (
+                <div key={idx} className="glass-panel p-8 rounded-3xl h-full hover:bg-white/5 transition-colors">
                   <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-3">
                     {idx === 0 && <PenTool className="text-[#A855F7]" />}
                     {idx === 1 && <Layout className="text-[#A855F7]" />}
@@ -445,9 +707,9 @@ export default function App() {
                     ))}
                   </div>
                 </div>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </section>
 
         {/* Footer */}
@@ -482,7 +744,7 @@ export default function App() {
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full aspect-[21/9] object-cover rounded-2xl mb-10"
+                className="w-full h-auto object-contain rounded-2xl mb-10 border border-white/10 bg-black/30"
               />
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{selectedProject.title}</h2>
@@ -496,27 +758,42 @@ export default function App() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 py-8 border-y border-white/10">
                   <div>
                     <h4 className="text-sm text-gray-500 mb-2">角色</h4>
-                    <p className="text-white font-medium">主导设计师</p>
+                    <p className="text-white font-medium">{selectedProject.role || '主导设计师'}</p>
                   </div>
                   <div>
                     <h4 className="text-sm text-gray-500 mb-2">周期</h4>
-                    <p className="text-white font-medium">3 个月</p>
+                    <p className="text-white font-medium">{selectedProject.period || '3 个月'}</p>
                   </div>
                   <div>
                     <h4 className="text-sm text-gray-500 mb-2">平台</h4>
-                    <p className="text-white font-medium">iOS / Android</p>
+                    <p className="text-white font-medium">{selectedProject.platform || 'iOS / Android'}</p>
                   </div>
                   <div>
                     <h4 className="text-sm text-gray-500 mb-2">链接</h4>
-                    <a href="#" className="text-[#A855F7] hover:underline flex items-center gap-1 font-medium">
+                    <a
+                      href={selectedProject.projectLink || '#'}
+                      target={selectedProject.projectLink ? '_blank' : undefined}
+                      rel={selectedProject.projectLink ? 'noreferrer' : undefined}
+                      className="text-[#A855F7] hover:underline flex items-center gap-1 font-medium"
+                    >
                       查看线上版本 <ExternalLink size={14} />
                     </a>
                   </div>
                 </div>
 
                 <div className="space-y-6 text-gray-300 leading-relaxed">
-                  <h3 className="text-2xl font-bold text-white">项目背景</h3>
-                  <p>{selectedProject.background || '（此处为占位符：你可以在这里详细描述项目背景与目标。）'}</p>
+                  {selectedProject.businessPain && (
+                    <>
+                      <h3 className="text-2xl font-bold text-white">业务痛点</h3>
+                      <p>{selectedProject.businessPain}</p>
+                    </>
+                  )}
+                  {selectedProject.background && (
+                    <>
+                      <h3 className="text-2xl font-bold text-white">项目背景</h3>
+                      <p className="whitespace-pre-line">{selectedProject.background}</p>
+                    </>
+                  )}
 
                   {selectedProject.detailImages?.length > 0 && (
                     <div className="mt-8 space-y-8">
@@ -526,7 +803,7 @@ export default function App() {
                           <img
                             src={img}
                             alt={`${selectedProject.title} 细节图 ${idx + 1}`}
-                            className="w-full min-h-[70vh] object-contain rounded-xl border border-white/10 bg-black/30"
+                            className="w-full h-auto object-contain rounded-xl border border-white/10 bg-black/30"
                           />
                         </section>
                       ))}
@@ -578,6 +855,250 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {selectedCapability && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-xl transition-opacity"
+            onClick={() => setSelectedCapability(null)}
+          />
+          <div className="relative w-full max-w-5xl max-h-full glass-panel bg-[#0a0512]/90 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+            <div className="flex items-center justify-between p-6 border-b border-white/10">
+              <span className="px-4 py-1.5 rounded-full bg-[#A855F7]/20 text-[#A855F7] text-sm font-medium">
+                {selectedCapability.section}
+              </span>
+              <button
+                onClick={() => setSelectedCapability(null)}
+                className="p-2 rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <div className="overflow-y-auto p-6 md:p-10">
+              {selectedCapability.customType === 'b2bFramework' ? (
+                <MethodologyB2B />
+              ) : (
+                <>
+                  <h3 className="text-3xl font-bold text-white mb-3">{selectedCapability.title}</h3>
+                  <p className="text-gray-300 leading-relaxed mb-6">{selectedCapability.desc}</p>
+                  {selectedCapability.detailPage && (
+                    <div className="mb-8">
+                      <iframe
+                        src={selectedCapability.detailPage}
+                        title={`${selectedCapability.title} Tech Edition`}
+                        className="w-full h-[60vh] rounded-xl border border-white/10 bg-black/30"
+                      />
+                    </div>
+                  )}
+                  <ul className="space-y-3 text-gray-300 leading-relaxed list-disc pl-5">
+                    {selectedCapability.details.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                  {selectedCapability.detailImages?.length > 0 && (
+                    <div className="mt-8 space-y-6">
+                      {selectedCapability.detailImages.map((img, idx) => (
+                        <section key={img} className="space-y-2">
+                          <p className="text-sm text-gray-500">第 {idx + 1} 屏</p>
+                          <img
+                            src={img}
+                            alt={`${selectedCapability.title} 内容图 ${idx + 1}`}
+                            className="w-full h-auto object-contain rounded-xl border border-white/10 bg-black/30"
+                          />
+                        </section>
+                      ))}
+                    </div>
+                  )}
+                  {selectedCapability.sections?.length > 0 && (
+                    <div className="mt-8 space-y-6">
+                      {selectedCapability.sections.map((section) => (
+                        <section key={section.heading} className="space-y-2">
+                          <h4 className="text-xl font-bold text-white">{section.heading}</h4>
+                          <p className="text-gray-300 leading-relaxed">{section.content}</p>
+                        </section>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
+const B2BLayerCard = ({ num, align, icon, title, enTitle, desc, tags }) => {
+  const isLeft = align === 'left';
+
+  return (
+    <div className={`relative flex flex-col md:flex-row items-center w-full ${isLeft ? 'md:flex-row-reverse' : ''}`}>
+      <div className="hidden sm:flex absolute left-8 md:left-1/2 -translate-x-1/2 w-12 h-12 bg-slate-900 border-4 border-[#070b14] rounded-full items-center justify-center z-20 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+        <span className="text-sm font-black text-slate-500">{num}</span>
+      </div>
+      <div className="hidden md:block w-1/2" />
+      <div className={`w-full md:w-1/2 pl-16 md:pl-0 sm:pl-24 ${isLeft ? 'md:pr-16 md:text-right' : 'md:pl-16 text-left'}`}>
+        <div className="bg-slate-800/40 border border-slate-700/50 backdrop-blur-sm p-8 rounded-3xl hover:bg-slate-800/80 transition-all duration-300 group">
+          <div className={`flex items-center mb-4 ${isLeft ? 'md:justify-end' : 'justify-start'}`}>
+            <div className={`w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center border border-slate-700 group-hover:border-slate-500 transition-colors ${isLeft ? 'md:ml-4 order-last md:order-none' : 'mr-4'}`}>
+              {icon}
+            </div>
+            <div className="ml-4 md:ml-0 flex-1 md:flex-none">
+              <h3 className="text-2xl font-bold text-white">{title}</h3>
+              <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">{enTitle}</p>
+            </div>
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed mb-6">{desc}</p>
+          <div className={`flex flex-wrap gap-2 ${isLeft ? 'md:justify-end' : 'justify-start'}`}>
+            {tags.map((tag) => (
+              <span key={tag} className="px-3 py-1 bg-[#070b14] text-slate-300 text-xs rounded-lg border border-slate-700/50 flex items-center">
+                <CheckCircle2 size={12} className="mr-1.5 opacity-50" />
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const MethodologyB2B = () => {
+  return (
+    <div className="w-full bg-[#070b14] text-slate-300 font-sans selection:bg-blue-500/30 overflow-x-hidden relative rounded-2xl border border-white/10 p-4 md:p-6">
+      <div className="absolute top-0 left-1/4 w-[260px] h-[260px] bg-blue-600/10 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[320px] h-[320px] bg-indigo-600/10 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto px-2 md:px-4 py-6 md:py-10 relative z-10 flex flex-col items-center">
+        <div className="text-center mb-12 max-w-4xl flex flex-col items-center">
+          <div className="inline-flex items-center space-x-2 mb-6 px-4 py-1.5 rounded-full border border-slate-700 bg-slate-800/50 text-slate-300 text-xs font-bold tracking-[0.2em] uppercase">
+            <span className="w-2 h-2 rounded-full bg-blue-500" />
+            <span>Methodology / B2B UX Framework</span>
+          </div>
+
+          <h1 className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight tracking-tight">领域驱动 B 端体验架构</h1>
+          <h2 className="text-lg md:text-2xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-6 italic">
+            Domain-Driven Operational UX Architecture
+          </h2>
+
+          <div className="bg-slate-900/80 border-l-4 border-blue-500 p-6 md:p-8 rounded-r-2xl text-left max-w-3xl backdrop-blur-sm shadow-2xl">
+            <p className="text-base md:text-lg text-slate-300 leading-relaxed font-medium">
+              在多个 B 端系统设计实践中，我逐渐总结出一个可复用的体验设计框架。相比 C 端产品强调“用户转化路径”，B 端产品的核心挑战在于：<strong className="text-white">复杂业务流程、高频操作效率、数据准确性与风险控制</strong>。
+              <br /><br />
+              因此，B 端体验设计需要围绕 <strong className="text-blue-400">“业务执行与管控结构”</strong> 展开。
+            </p>
+          </div>
+        </div>
+
+        <div className="w-full mb-16 relative">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">五层业务驱动模型</h3>
+            <p className="text-slate-500 tracking-wide uppercase text-sm font-bold">The 5-Layer Structure</p>
+          </div>
+
+          <div className="absolute left-8 md:left-1/2 top-[120px] bottom-10 w-px bg-gradient-to-b from-blue-500/50 via-indigo-500/50 to-emerald-500/50 md:-translate-x-1/2 hidden sm:block" />
+
+          <div className="space-y-6 md:space-y-8 relative">
+            <B2BLayerCard
+              num="01"
+              align="right"
+              icon={<Network className="text-blue-400" size={28} />}
+              title="业务域理解"
+              enTitle="Domain Understanding"
+              desc="任何 B 端设计都必须从业务领域结构出发。明确核心业务对象、业务流转方式以及风控校验环节。目标是建立业务模型（Business Model），为体验架构提供基础。"
+              tags={['实体对象提取', '业务流转分析', '如：订单/物料/合同']}
+            />
+            <B2BLayerCard
+              num="02"
+              align="left"
+              icon={<Zap className="text-cyan-400" size={28} />}
+              title="执行操作流"
+              enTitle="Execution Flow"
+              desc="B 端系统中最频繁使用的部分，服务于一线操作人员（仓管/运营/发货）。核心原则是：优先保证业务可以顺畅执行。设计目标是操作效率最大化、认知负担最小化、允许业务容错。"
+              tags={['扁平化表单', '批量操作', '快速录入', '自动填充']}
+            />
+            <B2BLayerCard
+              num="03"
+              align="right"
+              icon={<Database className="text-indigo-400" size={28} />}
+              title="数据沉淀层"
+              enTitle="Data Ledger"
+              desc="连接执行层与管理层的核心枢纽。所有执行操作最终沉淀为系统数据。承担数据统一记录、关系建立与历史追踪职责，确保系统具备完整的数据可追溯能力。"
+              tags={['操作日志', '数据台账', '状态记录', '数据关系表']}
+            />
+            <B2BLayerCard
+              num="04"
+              align="left"
+              icon={<ShieldCheck className="text-amber-400" size={28} />}
+              title="管控决策层"
+              enTitle="Control & Decision Layer"
+              desc="当业务规模扩大后，系统需要支持管理与风控。主要用户是管理者与财务。相比执行层的效率，此层更强调数据的准确性、可解释性与风险控制。"
+              tags={['对账系统', '审批流程', '数据分析', '财务结算']}
+            />
+            <B2BLayerCard
+              num="05"
+              align="right"
+              icon={<Activity className="text-emerald-400" size={28} />}
+              title="状态反馈系统"
+              enTitle="System Feedback"
+              desc="多角色协作与复杂流程中，系统必须持续向用户反馈业务状态。解决业务进度是否清晰、异常是否及时发现、跨角色信息是否同步的问题，让复杂业务保持可见与可控。"
+              tags={['状态标签', '进度可视化', '异常提示', 'Dashboard']}
+            />
+          </div>
+        </div>
+
+        <div className="w-full bg-[#0a101d] border border-slate-800 rounded-[2rem] p-6 md:p-10 mb-16 relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl" />
+
+          <div className="text-center mb-14">
+            <div className="inline-block mb-3 px-3 py-1 bg-slate-800 text-slate-400 text-xs font-bold rounded-md uppercase tracking-wider">Case Application</div>
+            <h3 className="text-3xl md:text-4xl font-black text-white mb-4">框架落地：智建云租</h3>
+            <p className="text-slate-400">如何将五层架构应用于极其复杂的建材租赁业务</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+            <div className="bg-slate-900/80 border border-slate-700/50 p-8 rounded-3xl hover:border-cyan-500/30 transition-colors group">
+              <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform">
+                <Zap size={24} />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">02. 执行流：极简宽容</h4>
+              <p className="text-sm text-cyan-400 mb-4">租出/归还单 双轨制表单</p>
+              <p className="text-slate-400 text-sm leading-relaxed">放弃传统ERP强绑定的线性操作。将“库存计数”与“财务计价”拆分为双轨字段。一线仓管无需顾虑财务逻辑，只需极速录入实物收发，系统自动换算，允许业务错位流转。</p>
+            </div>
+            <div className="bg-slate-900/80 border border-slate-700/50 p-8 rounded-3xl hover:border-amber-500/30 transition-colors group transform md:-translate-y-4">
+              <div className="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 text-amber-400 group-hover:scale-110 transition-transform">
+                <ShieldCheck size={24} />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">03/04. 数据与管控：严密兜底</h4>
+              <p className="text-sm text-amber-400 mb-4">物料/财务 对账单系统</p>
+              <p className="text-slate-400 text-sm leading-relaxed">前端释放的压力在底层汇聚为“动态物资池”。对账单作为核心风控阀门，同屏展示“盘点差异标红”与“合同赔偿条款”，辅助财务在复杂乱账中快速进行精准结算。</p>
+            </div>
+            <div className="bg-slate-900/80 border border-slate-700/50 p-8 rounded-3xl hover:border-emerald-500/30 transition-colors group">
+              <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
+                <Activity size={24} />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-2">05. 状态反馈：消除信息差</h4>
+              <p className="text-sm text-emerald-400 mb-4">项目总览 Dashboard</p>
+              <p className="text-slate-400 text-sm leading-relaxed">全局状态告别干瘪的“进行中”。基于结算周期，可视化透传业务真实进度（如归还进度80%），并在卡片中明确透出“算头算尾”计费规则，让跨部门协作透明可控。</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full max-w-4xl text-center py-8 relative">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
+          <h2 className="text-2xl md:text-4xl font-bold text-white leading-snug mb-8">
+            “ B端体验设计的核心，不是界面美观，<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+              而是让复杂业务能够被高效执行、被准确记录、并被有效管控。
+            </span> ”
+          </h2>
+          <p className="text-lg text-slate-500 font-medium tracking-wide">
+            优秀的 B 端体验架构，本质是 <strong className="text-slate-300">业务执行效率</strong> 与 <strong className="text-slate-300">系统管控能力</strong> 之间的平衡。
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
