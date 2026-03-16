@@ -132,9 +132,9 @@ const EXTENDED_CAPABILITIES = [
     title: '市场能力',
     desc: '理解用户与市场，支持品牌定位和增长策略。',
     detailImages: [
-      '/image/yunying/manchengguniang.png',
-      '/image/yunying/SOP.png',
-      '/image/yunying/yunying.png',
+      '/image/yunying/manchengguniang.webp',
+      '/image/yunying/SOP.webp',
+      '/image/yunying/yunying.webp',
     ],
     details: [
       '分析目标人群与竞品格局，提炼差异化价值主张。',
@@ -146,9 +146,9 @@ const EXTENDED_CAPABILITIES = [
     title: '账号运营',
     desc: '覆盖内容规划、发布节奏和数据复盘的运营能力。',
     detailImages: [
-      '/image/zimeiti/zimeiti-overview.png',
-      '/image/zimeiti/zimeiti-script.png',
-      '/image/zimeiti/zimeiti-stats.png',
+      '/image/zimeiti/zimeiti-overview.webp',
+      '/image/zimeiti/zimeiti-script.webp',
+      '/image/zimeiti/zimeiti-stats.webp',
     ],
     details: [
       '搭建内容选题与栏目体系，形成稳定输出机制。',
@@ -240,22 +240,22 @@ const PROJECTS = [
     id: 1,
     title: '百度翻译AI功能',
     category: '移动端应用',
-    image: '/image/百度翻译封面.png',
+    image: '/image/百度翻译封面.webp',
     desc: 'AI驱动的下一代智能翻译与语言学习平台。',
     launchTime: '2024年1月',
     background: '全球化加速了跨语言信息需求，用户对翻译产品的期待已从单一工具向“理解+学习”的综合体验转变。传统产品普遍存在语境理解不足、使用场景局限、学习闭环缺失等痛点，同时对话式自然语言AI的兴起进一步重塑了用户对即时、互动式语言体验的认知。借助AI大模型，设计目标聚焦于打造智能化、沉浸式、持续驱动学习的语言体验。',
     detailImages: [
-      '/image/百度翻译1.png',
-      '/image/百度翻译2.png',
-      '/image/百度翻译3.png',
-      '/image/百度翻译4.png',
+      '/image/百度翻译1.webp',
+      '/image/百度翻译2.webp',
+      '/image/百度翻译3.webp',
+      '/image/百度翻译4.webp',
     ],
   },
   {
     id: 2,
     title: '智建云租（创业项目）',
     category: '网页端应用',
-    image: '/image/AIagent.png',
+    image: '/image/AIagent.webp',
     desc: '「智建云租」是一个面向建筑材料租赁业务的 SaaS 化一体化工作台。',
     projectLink: 'http://121.41.188.162/',
     background: `项目地址：http://121.41.188.162/
@@ -272,77 +272,77 @@ const PROJECTS = [
 优势：
 极大降低一线人员操作门槛，完全贴合建筑行业“高频进出、按批收发、乱序归还”的真实施工场景。`,
     detailImages: [
-      '/image/AIagent.png',
-      '/image/xiangmu_zuchu.png',
-      '/image/xiangmu_zuchu_hetong.png',
-      '/image/xiangmu_zuchu_zonglan.png',
-      '/image/xiangmu_zuchu_zuchudan.png',
-      '/image/xiangmu_zuchu_zuchudan2.png',
-      '/image/jinxiao_caigou.png',
-      '/image/jinxiao_caigoudan.png',
-      '/image/jinxiao_kucun.png',
-      '/image/xinxi_cailiao.png',
+      '/image/AIagent.webp',
+      '/image/xiangmu_zuchu.webp',
+      '/image/xiangmu_zuchu_hetong.webp',
+      '/image/xiangmu_zuchu_zonglan.webp',
+      '/image/xiangmu_zuchu_zuchudan.webp',
+      '/image/xiangmu_zuchu_zuchudan2.webp',
+      '/image/jinxiao_caigou.webp',
+      '/image/jinxiao_caigoudan.webp',
+      '/image/jinxiao_kucun.webp',
+      '/image/xinxi_cailiao.webp',
     ],
   },
   {
     id: 3,
     title: '文心一格体验升级（文生图AI）',
     category: '网页端应用',
-    image: '/image/wenxin-cover.png',
+    image: '/image/wenxin-cover.webp',
     desc: '面向大众创作者的文生图 AI 产品体验优化，提升创作效率、可控性与探索乐趣。',
     background: '文心一格作为基于文心大模型的 AI 绘画产品，提供了从文本到图像的生成能力，并吸引了大量用户进行 AI 创作尝试。但随着用户规模增长与使用场景的多样化，用户对 AI 工具的期待也从“尝试生成图片”转向“高效完成创作”，产品体验的重要性逐渐提升。',
     detailImages: [
-      '/image/wenxin-1.png',
-      '/image/wenxin-2.png',
-      '/image/wenxin-3.png',
-      '/image/wenxin-4.png',
+      '/image/wenxin-1.webp',
+      '/image/wenxin-2.webp',
+      '/image/wenxin-3.webp',
+      '/image/wenxin-4.webp',
     ],
   },
   {
     id: 4,
     title: '如流-智能助理（百度企业办公应用）',
     category: '移动端应用',
-    image: '/image/如流超级助理封面.png',
+    image: '/image/如流超级助理封面.webp',
     desc: '在企业办公场景中引入AI智能助理能力,优化信息检索、任务协同与日常决策效率。',
     role: '设计师',
     period: '--',
     background: '业务痛点：随着企业内部工具（如 OA、差旅出行、研发 iCafe 提单等）日益庞杂，员工面临着严重的“系统割裂”和“入口迷失”问题。传统的“菜单点击”与“关键词搜索”效率低下，且新员工学习成本极高。设计目标：依托 LLM（大语言模型）能力，将办公体验从“人找系统”升级为“对话即服务（Dialog as a Service）”。通过自然语言交互作为统一入口，打造一个能理解上下文、支持多轮对话、并能直接唤起插件执行任务的 AI 超级助理。',
     detailImages: [
-      '/image/如流超级助理图1.png',
-      '/image/Slide%2016_9%20-%201.png',
-      '/image/Slide%2016_9%20-%202.png',
-      '/image/Slide%2016_9%20-%203.png',
-      '/image/Slide%2016_9%20-%204.png',
-      '/image/Slide%2016_9%20-%205.png',
-      '/image/Slide%2016_9%20-%206.png',
-      '/image/Slide%2016_9%20-%207.png',
+      '/image/如流超级助理图1.webp',
+      '/image/Slide%2016_9%20-%201.webp',
+      '/image/Slide%2016_9%20-%202.webp',
+      '/image/Slide%2016_9%20-%203.webp',
+      '/image/Slide%2016_9%20-%204.webp',
+      '/image/Slide%2016_9%20-%205.webp',
+      '/image/Slide%2016_9%20-%206.webp',
+      '/image/Slide%2016_9%20-%207.webp',
     ],
   },
   {
     id: 5,
     title: 'Trip.com计划旅行页升级',
     category: '移动端应用',
-    image: '/image/trip-plan-cover.png',
+    image: '/image/trip-plan-cover.webp',
     desc: '围绕旅行决策链路重构计划页体验，提升用户浏览深度、停留时长与转化表现。',
     detailImages: [
-      '/image/trip%20plan.png',
-      '/image/trip%20plan-1.png',
-      '/image/trip%20plan-2.png',
-      '/image/trip%20plan-3.png',
+      '/image/trip%20plan.webp',
+      '/image/trip%20plan-1.webp',
+      '/image/trip%20plan-2.webp',
+      '/image/trip%20plan-3.webp',
     ],
   },
   {
     id: 6,
     title: 'Trip.com营销视觉',
     category: '视觉设计',
-    image: '/image/营销活动.png',
+    image: '/image/营销活动.webp',
     desc: '打造多场景营销视觉体系与活动素材规范，统一品牌表达并提升活动触达效率。',
     detailImages: [
-      '/image/营销活动-1.png',
-      '/image/营销活动-2.png',
-      '/image/营销活动-3.png',
-      '/image/营销活动-4.png',
-      '/image/营销活动-5.png',
+      '/image/营销活动-1.webp',
+      '/image/营销活动-2.webp',
+      '/image/营销活动-3.webp',
+      '/image/营销活动-4.webp',
+      '/image/营销活动-5.webp',
     ],
   },
 ];
@@ -597,6 +597,7 @@ export default function App() {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                   />
                   {/* Hover Overlay */}
@@ -640,6 +641,7 @@ export default function App() {
                       <img
                         src={item.coverImage}
                         alt={`${item.title} 封面`}
+                        loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                       />
                     ) : (
@@ -744,6 +746,7 @@ export default function App() {
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
+                loading="lazy"
                 className="w-full h-auto object-contain rounded-2xl mb-10 border border-white/10 bg-black/30"
               />
               <div className="max-w-3xl mx-auto">
@@ -803,6 +806,7 @@ export default function App() {
                           <img
                             src={img}
                             alt={`${selectedProject.title} 细节图 ${idx + 1}`}
+                            loading="lazy"
                             className="w-full h-auto object-contain rounded-xl border border-white/10 bg-black/30"
                           />
                         </section>
@@ -904,6 +908,7 @@ export default function App() {
                           <img
                             src={img}
                             alt={`${selectedCapability.title} 内容图 ${idx + 1}`}
+                            loading="lazy"
                             className="w-full h-auto object-contain rounded-xl border border-white/10 bg-black/30"
                           />
                         </section>
